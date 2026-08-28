@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi cuenta | Academia de Natación</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header>
+    <nav aria-label="Navegación principal">
+        <a href="inicio.html"><strong>Academia de Natación</strong></a>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="entrenamiento.html">Entrenamiento</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="auth.html" aria-current="page">Mi cuenta</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="auth-main">
+    <section class="auth-panel">
+        <p class="eyebrow">THE ATHLETE FORTRESS</p>
+        <h1>Tu cuenta de atleta</h1>
+        <p>Guarda tus datos para acceder a tu experiencia de entrenamiento.</p>
+
+        <div class="auth-tabs" role="tablist" aria-label="Acceso a la cuenta">
+            <button class="auth-tab is-active" type="button" data-auth-tab="login">Iniciar sesión</button>
+            <button class="auth-tab" type="button" data-auth-tab="register">Registrarme</button>
+        </div>
+
+        <p class="auth-message" data-auth-message aria-live="polite"></p>
+
+        <form class="auth-form" data-auth-form="login" data-login-form>
+            <label for="login-correo">Correo electrónico</label>
+            <input id="login-correo" name="correo" type="email" autocomplete="email" required>
+            <label for="login-password">Contraseña</label>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+            <button class="button button-primary" type="submit">Entrar</button>
+        </form>
+
+        <form class="auth-form" data-auth-form="register" data-register-form hidden>
+            <label for="register-nombre">Nombre</label>
+            <input id="register-nombre" name="nombre" type="text" autocomplete="name" required>
+            <label for="register-correo">Correo electrónico</label>
+            <input id="register-correo" name="correo" type="email" autocomplete="email" required>
+            <label for="register-password">Contraseña</label>
+            <input id="register-password" name="password" type="password" minlength="6" autocomplete="new-password" required>
+            <label for="register-confirm-password">Confirmar contraseña</label>
+            <input id="register-confirm-password" name="confirmPassword" type="password" minlength="6" autocomplete="new-password" required>
+            <button class="button button-primary" type="submit">Crear cuenta</button>
+        </form>
+        <p class="auth-note">Tus datos se guardan localmente en este navegador.</p>
+    </section>
+</main>
+
+<footer><p>&copy; 2026 Academia de Natación. Todos los derechos reservados.</p></footer>
+<script src="../models/authModel.js"></script>
+<script src="../controllers/authController.js"></script>
+<script src="../controllers/app.js"></script>
+</body>
+</html>

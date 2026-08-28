@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración | Academia de Natación</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header>
+    <nav aria-label="Navegación principal">
+        <a href="inicio.html"><strong>Academia de Natación</strong></a>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="entrenamiento.html">Entrenamiento</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="auth.html">Mi cuenta</a></li>
+            <li><a href="admin.html" aria-current="page">Admin</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="admin-main">
+    <section class="auth-panel admin-access-panel">
+        <p class="eyebrow">PANEL DE CONTROL</p>
+        <h1>Administrar horarios</h1>
+        <p>Gestiona las sesiones de entrenamiento asignadas a cada atleta.</p>
+        <form class="auth-form" data-admin-access>
+            <label for="admin-correo">Correo del administrador</label>
+            <input id="admin-correo" name="correo" type="email" placeholder="admin@academia.test" required>
+            <label for="admin-password">Contraseña</label>
+            <input id="admin-password" name="password" type="password" placeholder="admin123" required>
+            <button class="button button-primary" type="submit">Entrar al panel</button>
+        </form>
+        <p class="auth-message" data-admin-message aria-live="polite"></p>
+    </section>
+
+    <section class="admin-panel" data-admin-panel hidden>
+        <div class="panel-heading"><div><p class="panel-kicker">CRUD DE HORARIOS</p><h2>Sesiones por atleta</h2></div></div>
+        <div class="admin-layout">
+            <form class="schedule-form" data-schedule-form>
+                <h3>Asignar horario</h3>
+                <label for="admin-usuario">Usuario</label>
+                <select id="admin-usuario" name="usuario" data-user-select></select>
+                <label for="horario-dia">Día</label>
+                <select id="horario-dia" name="dia" required><option>Lunes</option><option>Martes</option><option>Miércoles</option><option>Jueves</option><option>Viernes</option><option>Sábado</option><option>Domingo</option></select>
+                <label for="horario-actividad">Actividad</label>
+                <input id="horario-actividad" name="actividad" type="text" placeholder="Resistencia" required>
+                <label for="horario-distancia">Distancia en metros</label>
+                <input id="horario-distancia" name="distancia" type="number" min="1" placeholder="2500" required>
+                <label for="horario-hora">Hora</label>
+                <input id="horario-hora" name="hora" type="time" required>
+                <button class="button button-primary" type="submit">Crear horario</button>
+            </form>
+            <div class="schedule-table-wrapper">
+                <table>
+                    <thead><tr><th scope="col">Día</th><th scope="col">Actividad</th><th scope="col">Distancia</th><th scope="col">Hora</th><th scope="col">Acciones</th></tr></thead>
+                    <tbody data-schedule-list><tr><td colspan="5">Inicia sesión para ver los horarios.</td></tr></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer><p>&copy; 2026 Academia de Natación. Todos los derechos reservados.</p></footer>
+<script src="../models/authModel.js"></script>
+<script src="../models/horarios.js"></script>
+<script src="../controllers/adminController.js"></script>
+<script src="../controllers/app.js"></script>
+</body>
+</html>

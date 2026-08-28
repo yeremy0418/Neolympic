@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda | Academia de Natación</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header>
+    <nav aria-label="Navegación principal">
+        <a href="inicio.html"><strong>Academia de Natación</strong></a>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="entrenamiento.html">Entrenamiento</a></li>
+            <li><a href="tienda.html" aria-current="page">Tienda</a></li>
+            <li><a href="auth.html">Mi cuenta</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Tienda de natación</h1>
+    <p>Encuentra accesorios útiles para entrenar con comodidad y cuidar tu equipo.</p>
+
+    <section class="dashboard-panel catalog-section">
+        <div class="panel-heading">
+            <div>
+                <p class="panel-kicker">EQUIPO ESENCIAL</p>
+                <h2>Equipo para entrenar</h2>
+            </div>
+        </div>
+        <div class="product-grid" data-catalogo></div>
+    </section>
+
+    <section>
+        <h2>Compra y asesoría</h2>
+        <p>Consulta la disponibilidad, las tallas y las recomendaciones de nuestros instructores antes de elegir tu equipo.</p>
+        <p><a href="mailto:contacto@academiadenatacion.example">Escríbenos para solicitar información</a>.</p>
+    </section>
+
+    <p><a href="inicio.html">Volver al inicio</a> | <a href="entrenamiento.html">Conocer los entrenamientos</a></p>
+</main>
+
+<footer>
+    <p>&copy; 2026 Academia de Natación. Todos los derechos reservados.</p>
+</footer>
+<script src="../models/productos.js"></script>
+<script src="../controllers/tiendaController.js"></script>
+<script src="../controllers/app.js"></script>
+</body>
+</html>
